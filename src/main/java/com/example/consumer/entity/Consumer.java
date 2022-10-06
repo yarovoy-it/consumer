@@ -3,17 +3,10 @@ package com.example.consumer.entity;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
 public class Consumer {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "Id", nullable = false)
     private Integer id;
-    @Column(name = "Value", nullable = false)
     private Integer value;
-    @Temporal(TemporalType.DATE)
-    @Column(name = "Set_Time", nullable = false)
     private Date setTime;
 
     public Consumer() {

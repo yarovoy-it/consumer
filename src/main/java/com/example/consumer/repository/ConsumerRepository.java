@@ -9,7 +9,6 @@ import com.example.consumer.entity.Consumer;
 public interface ConsumerRepository {
     /**
      * Method for saving object consumer
-     * @param consumer
      */
     void save(Consumer consumer);
 }
