@@ -3,33 +3,50 @@
 Application which you can use for saving as much as you want numbers.
 Then you can get mean of numbers consumed by application in the last 5 minutes.
 
+We implement web REST application, withe methods save and mean based on spring-boot with h2db. If you want change time
+period of average calculation you should go to application.properties and change setting consumer.average-time-period(
+seconds)
+
 # Technologist
 
 - Java (11)
-- Spring Boot
-- H2database
-- Spring Boot Jdbc
-- Lombok
-- Swagger
-- Maven
+- Spring Boot (2.7.4)
+- H2database (2.1.214)
+- Spring Boot Jdbc (2.6.6)
+- Lombok (1.18.12)
+- Swagger (3.0.0)
+- Maven (3.8.6)
 
 # Environment
 
 - JRE (Java Runtime Environment) average
 - Maven
 
-# Build
+# Build/Start
 
-[Download](https://github.com) application from git repository. Then we have tow option:
+[Download](https://github.com/yarovoy-it/consumer) application from git repository. Then we have same option:
 
 - One of them start application from project folder. You should go to root folder (example c:/work-space/consumer or any
   other path), and then start by script in terminal.
 
   mvn spring-boot:run
 
-- And Second way easier we should go to our project find folder build. There jar file and bat script after double-click
-  on the run file and application will be started. Then in the same folder we left postman collection which you can use
-  for testing application.
+Or
 
-# Start
+    mvn clean package
+
+then you should see folder target and use this script
+
+    java -jar target/consumer-1.0.0.jar
+
+### Start with script without build
+
+- (Windows) Go to consumer/build and run script run.bat
+
+- (UNIX) Go to consumer/build and run script run.linux.sh
+
+# Postman collection
+Path to postman collection: consumer/build/Consumer postman_collection.json
+
+
 
