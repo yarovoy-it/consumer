@@ -1,8 +1,8 @@
 CREATE TABLE  IF NOT EXISTS `consumer`
 (
-    `id` integer not null,
-    `value` integer not null,
-    `set_time` date not null,
+    `id` bigint auto_increment,
+    `accept_value` integer not null,
+    `add_time` timestamp DEFAULT(CURRENT_TIMESTAMP) not null,
     primary key(`id`)
 ) ;
 

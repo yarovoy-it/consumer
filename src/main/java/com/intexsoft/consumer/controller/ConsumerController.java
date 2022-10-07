@@ -1,27 +1,29 @@
-package com.example.consumer.controller;
+package com.intexsoft.consumer.controller;
 
-import com.example.consumer.service.ConsumerService;
+import com.intexsoft.consumer.service.ConsumerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 /**
  * Consumer Controller.
  */
 @RestController
 @RequestMapping("api/consumer/")
+@AllArgsConstructor
+@Slf4j
 @Tag(name = "Consumer API")
 public class ConsumerController {
     private final ConsumerService consumerService;
-
-    public ConsumerController(ConsumerService consumerService) {
-        this.consumerService = consumerService;
-    }
 
     /**
      * Method to get average of numbers consumed in last 5 min.
@@ -50,8 +52,9 @@ public class ConsumerController {
                     description = "Failed to count"
             )
     })
-    public ResponseEntity<Double> average() {
-        Double response = consumerService.mean(5);
+    public ResponseEntity<BigDecimal> average() {
+        BigDecimal response = consumerService.mean();
+        log.info("Return average {} number", response);
         return ResponseEntity.ok()
                 .body(response);
     }
@@ -66,9 +69,7 @@ public class ConsumerController {
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Number was saved",
-                    content = @Content(
-                            schema = @Schema(implementation = String.class))
+                    description = "Number was saved"
             ),
             @ApiResponse(
                     responseCode = "400",
@@ -79,7 +80,8 @@ public class ConsumerController {
                     description = "Failed to save number"
             )
     })
-    public @ResponseBody void upload(@RequestPart final int acceptNumber) {
+    public void save(final int acceptNumber) {
+        log.info("Start saving current {} number", acceptNumber);
         consumerService.save(acceptNumber);
     }
 }
