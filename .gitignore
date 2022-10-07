@@ -7,6 +7,8 @@ target/
 /mvnw
 !mvnw.cmd
 !mvnw
+mvnw
+mvnw.cmd
 
 ### STS ###
 .apt_generated
