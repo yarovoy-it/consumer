@@ -45,6 +45,10 @@ then you should see folder target and use this script
 
 - (UNIX) Go to consumer/build and run script run.linux.sh
 
+# Swagger
+
+After application was launch [swagger](http://localhost:8080/swagger-ui/) will work
+
 # Postman collection
 Path to postman collection: consumer/build/Consumer postman_collection.json
 

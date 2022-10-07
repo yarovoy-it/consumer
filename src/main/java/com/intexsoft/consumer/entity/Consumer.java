@@ -1,11 +1,13 @@
 package com.intexsoft.consumer.entity;
 
-
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
+/**
+ * Object Consumer for working with accept numbers
+ */
 @Data
 public class Consumer {
     @Id

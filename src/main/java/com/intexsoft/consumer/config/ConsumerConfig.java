@@ -1,6 +1,7 @@
 package com.intexsoft.consumer.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(prefix = "consumer")
+@EnableConfigurationProperties(ConsumerConfig.class)
 public class ConsumerConfig {
     private int averageTimePeriod;
 

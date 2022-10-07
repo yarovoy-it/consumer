@@ -1,7 +1,6 @@
 package com.intexsoft.consumer.service;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 /**
  * Service to manage consumed numbers.
