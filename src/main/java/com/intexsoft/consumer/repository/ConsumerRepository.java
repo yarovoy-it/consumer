@@ -15,6 +15,7 @@ import java.util.Optional;
 public interface ConsumerRepository extends CrudRepository<Consumer, Integer> {
     /**
      * Method return mean of numbers for last 5 minutes
+     *
      * @param timePeriod int second
      * @return Optional<BigDecimal> of average
      */
