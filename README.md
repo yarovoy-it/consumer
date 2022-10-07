@@ -47,7 +47,7 @@ then you should see folder target and use this script
 
 # Swagger
 
-After application was launch [swagger](http://localhost:8080/swagger-ui/) will work
+After application has launched. You can use [swagger](http://localhost:8080/swagger-ui/).
 
 # Postman collection
 Path to postman collection: consumer/build/Consumer postman_collection.json
